@@ -1,3 +1,5 @@
+//transformation of the function of multiple arguments into several functions of a single argument in sequence
+//by returning function inside function. closure concept is being used
 let multiply = function (a,b){
   console.log(a,b, a*b);
 }
