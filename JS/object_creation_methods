@@ -1,0 +1,30 @@
+var pat = {name:"abcd",address:"efgh"};
+console.log(pat);
+
+var patNew = new Object();
+patNew.age = null;
+console.log(patNew);
+
+var objCreate = Object.create(pat);
+console.log(objCreate, '\n' , objCreate.name, objCreate.__proto__);
+//this will copy the prototype?
+
+
+//constructor function
+function CreateObject(){
+  this.name="";
+  this.address="";  
+}
+var constrFnObj = new CreateObject();
+console.log(constrFnObj);
+
+//class 
+class ObjectClass{
+  constructor(name,address){
+    this.name = name;
+    this.address = address;
+  }
+}
+
+var objUsingClass = new ObjectClass("aravi", "ksd");
+console.log(objUsingClass);
