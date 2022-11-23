@@ -1,0 +1,17 @@
+  background-image: linear-gradient(to bottom right, #28b485fb, #7ed56f9d),
+    url(../img/hero.jpg);
+  /* linear gradient - params. direction, starting colour, ending colour. 
+    then can choose the image by a comma, then url() */
+
+  background-size: cover; /* fits the width to the viewport */
+
+  background-position: top; /* fits the background image's top position fixed even when the screen width changes. 
+  values can be top,bottom,center,left,right */
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+  /* can put as many as x-y coordinates. clockwise direction*/
+
+  height: 95vh; /* height of this style is 95% of the viewport height */
+
+  line-height: 1.7; /* height between lines */
+
