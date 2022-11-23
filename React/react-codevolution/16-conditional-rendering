@@ -1,0 +1,27 @@
+    //short circuit - to display something or not display at all
+    return this.state.isLoggedIn && <div>Welcome Aravinda</div>;
+
+    //conditional rendering
+    /*     return this.state.isLoggedIn ? (
+      <div>Welcome Aravinda</div>
+    ) : (
+      <div> Welcome Guest </div>
+    ); */
+
+    //element variable
+    /*     let message;
+    if (this.state.isLoggedIn) {
+      message = "Aravinda";
+    } else {
+      message = "Guest";
+    }
+
+    //if-else
+    return <div>{`Welcome ${message}`}</div>; */
+    /*     if (this.state.isLoggedIn) {
+      return <div>Welcome Aravinda</div>;
+    } else {
+      return <div>Welcome Guest</div>;
+    } */
+
+

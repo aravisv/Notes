@@ -1,0 +1,41 @@
+you can access the child element of the component as prop via {props.children}.
+this is useful when you dont know what needs to be rendered. dynamic content
+in this case, enclose what needs to be rendered within the component tag.
+else, if you already know what needs to be passed, send it as attributes
+
+ex:
+//in the App.js: where you pass the props
+function App() {
+  return (
+    <div className="App">
+      <Greet name="Aravinda" />
+      <Greet>
+        <h2> Child prop</h2>
+      </Greet>
+    </div>
+  );
+}
+
+//in the Greet.js where you receive the props
+const Greet = (props) => {
+  return (
+    <div>
+      <h1> Hello {props.name} </h1>
+      {props.children}
+    </div>
+  );
+};
+
+//class component
+class Greet extends Component {
+  render() {
+    return (
+      <div>
+        <h1> Hello {this.props.name} </h1>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
+props are immutable. cant be changed in the component we receive it.

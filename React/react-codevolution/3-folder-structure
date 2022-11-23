@@ -1,0 +1,10 @@
+folders:
+node_modules - where all the dependencies are installed
+public - manifest.json:for progressive web apps, index.html:the only HTML file in app
+src - where the main JS file and all other components will be present/coded
+
+files:
+.gitignore - the files mentioned here will be ignored during git commands like commit,stage etc
+package-lock.json - entire dependency tree & their versions
+package.json - only main dependencies and their versions
+README.md

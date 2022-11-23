@@ -1,0 +1,2 @@
+a class can optionally receive props, return a html element. while maintaining an internal state.
+

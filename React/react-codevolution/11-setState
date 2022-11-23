@@ -1,0 +1,45 @@
+dont change state directly, as it will not re-render the component.
+
+setState is async.
+so if you do the console log just ater setState, the log will have the previous value.
+
+second parameter is setState() is the callback function. which will execute after changing the state.
+so if you want anything to be executed after the state has been changed, write it here in the callback function.
+
+  /*
+
+  increment() {
+    this.setState(
+      {
+        counter: this.state.counter + 1,
+      },
+      () => {
+        console.log(this.state.counter);
+      }
+    );
+  }
+
+    incrementFive() {
+        this.increment();
+        this.increment();
+        this.increment();
+        this.increment();
+        this.increment();
+    }
+
+    here it will increment only 1. not 5. because react will optimize internally by combining multiple setState into single setState
+    therefore pass the function in setState with previousState as a parameter. then set the new value using the previousState
+} */
+
+  increment() {
+    this.setState(
+      (previousState, props) => ({
+        counter: previousState.counter + 1,
+      }),
+      () => {
+        console.log(this.state.counter);
+      }
+    );
+  }
+
+//second argument in the function is props which is optional

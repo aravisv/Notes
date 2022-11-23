@@ -1,0 +1,16 @@
+jsx translates into React.CreateElement automatically.
+jsx is simpler
+
+
+//JSX
+const Greet = () => <h1> Hello Aravinda </h1>;
+
+//without JSX
+const Greet = () => {
+  return React.createElement(
+    "div",
+    { id: "hello", className: "hello-class" },
+    React.createElement("h1", null, "Hello Aravinda")
+  );
+};
+

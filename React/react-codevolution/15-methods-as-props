@@ -1,0 +1,60 @@
+passing the function as prop to the Child component tag
+in the child component, call the props.fnName
+this shall call the function defined in the parent component
+
+ex:
+//Parent component
+import React, { Component } from "react";
+import ChildComponent from "./ChildComponent";
+
+class ParentComponent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      parentName: "Parent",
+    };
+
+    this.greetParent = this.greetParent.bind(this);
+  }
+
+  greetParent() {
+    window.alert(`Hello ${this.state.parentName}`);
+  }
+
+  render() {
+    return <ChildComponent handler={this.greetParent} />;
+  }
+}
+
+export default ParentComponent;
+
+
+//Child component
+import React from "react";
+
+function ChildComponent(props) {
+  return <button onClick={props.handler}>Greet parent</button>;
+}
+
+export default ChildComponent;
+
+=> upon clicking on the child button, parent's alert fn will be called
+
+
+if you want to pass params, use arrow function in the childComponent and return the caller function with arguments
+ex:
+//Parent component
+  greetParent(childName = "childA") {
+    window.alert(`Hello ${this.state.parentName} from ${childName}`);
+  }
+
+//here childA will be shown in case no arguments passed from the child props
+
+//Child component
+function ChildComponent(props) {
+  return <button onClick={() => props.handler()}>Greet parent</button>;
+}
+
+
+

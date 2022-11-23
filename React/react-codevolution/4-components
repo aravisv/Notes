@@ -1,0 +1,30 @@
+stateless functional component:
+JS fn, returns html element
+
+function Welcome (props) {
+    return <h1> Hello {props.name} </h1>;
+}
+
+
+stateful class component:
+Class extending Component class, must render() and return an html element
+
+class Welcome extends React.Component{
+    render(){
+	return <h1> Hello {this.props.name} </h1>
+    }
+}
+
+
+functional components:
+.simple functions
+.use functional component as much as possible
+.absence of 'this'
+
+class components:
+.feature rich
+.maintain privte date (state)
+.complex UI logic
+.provide lifecycle hooks
+.called as smart/cotainer components
+	
